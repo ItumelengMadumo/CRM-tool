@@ -76,7 +76,7 @@ export default function FinancePage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="border border-black">
+        <Card className="border border-black">{/* Financial overview card */}
           <CardHeader className="pb-2">
             <CardTitle className="text-lg flex items-center">
               <CreditCard className="mr-2 h-5 w-5 text-[#3396ff]" /> Financial Overview
@@ -121,7 +121,7 @@ export default function FinancePage() {
         </Card>
 
         {financeCategories.map((category) => (
-          <Card key={category.title} className="border border-black">
+          <Card key={category.title} className="border border-black">{/* Expense and ayment taracking card */}
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center">
                 <category.icon className="mr-2 h-5 w-5 text-[#3396ff]" /> {category.title}
@@ -143,11 +143,11 @@ export default function FinancePage() {
         ))}
       </div>
 
-      <Card className="border border-black">
+      <Card className="border border-black">{/* Table for recent activity */}
         <CardHeader>
           <CardTitle>Recent Activity</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent> 
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

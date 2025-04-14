@@ -7,17 +7,30 @@ import { CreditCard, FileText, DollarSign, TrendingUp, ArrowRight } from "lucide
 import Link from "next/link"
 
 
-
-export default function Invoices() {
+export default function SupportingDocumentation() {
   const [isLoading, setIsLoading] = useState(false)
 
-  const invoiceCards = [
+  const SupportingDocumentation = [
     {
-      title: "inovice one",
+      title: "Contracts",
       description: "Manage invoices, receipts, quotes, and other core financial documents",
       icon: FileText,
-      href: "",
+      href: "/",
       count: 24,
+    },
+    {
+      title: "Proof of Payments",
+      description: "Access contracts, proof of payments, tax documents, and timesheets",
+      icon: FileText,
+      href: "/",
+      count: 12,
+    },
+    {
+      title: "Tax Documents",
+      description: "Track expenses, bills, and payment vouchers",
+      icon: DollarSign,
+      href: "/",
+      count: 8,
     },
   ]
 
@@ -62,8 +75,8 @@ export default function Invoices() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Finance</h1>
-        <p className="text-gray-500">Access and manage key financial documents</p>
+        <h1 className="text-2xl font-bold text-gray-900">Supporting Documentation</h1>
+        <p className="text-gray-500">Access and manage key Suporting  documents</p>
       </div>
 
       {/* Financial Overview */}
@@ -113,7 +126,7 @@ export default function Invoices() {
         </Card>
 
         {/* Individual Financial Document Cards */}
-        {invoiceCards.map((doc) => (
+        {SupportingDocumentation.map((doc) => (
           <Card key={doc.title} className="border border-black">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center">

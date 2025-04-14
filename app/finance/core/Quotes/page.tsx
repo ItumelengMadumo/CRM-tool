@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button"
 import { FileText, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
-interface Estimates {
+interface Quotes {
   title: string
   description: string
   routeBack?: string
 }
 
-export default function Estimates({ title, description, routeBack = "/finance" }: Estimates) {
+export default function Quotes({ title, description, routeBack = "/finance" }: Quotes) {
   return (
     <div className="space-y-6">
       <div>
@@ -27,7 +27,7 @@ export default function Estimates({ title, description, routeBack = "/finance" }
         </CardHeader>
         <CardContent>
           <p className="text-sm text-gray-500 mb-4">
-            Here you can view, create, and manage your Estimaets {title.toLowerCase()}.
+            Here you can view, create, and manage your Quotes {title.toLowerCase()}.
           </p>
           <Button variant="outline">Create New {title}</Button>
         </CardContent>

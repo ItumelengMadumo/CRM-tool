@@ -69,8 +69,8 @@ export default function CoreFinanceDocuments() {
     },
   ]
   const financeDocs = [
-    { title: "Invoices", href: "/finance/invoices" },
-    { title: "Receipts", href: "/finance/receipts" },
+    { title: "Invoices", href: "/finance/core/Invoices" },
+    { title: "Receipts", href: "/finance/core/receipts" },
     { title: "Quotes & Estimates", href: "/finance/core/estimates" },
     { title: "Purchase Orders", href: "/finance/purchase-orders" },
     { title: "Credit Notes", href: "/finance/credit-notes" },

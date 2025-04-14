@@ -213,7 +213,12 @@ export default function Sidebar() {
           )}
           onClick={(e) => {
             if (item.subItems) {
-              e.preventDefault()
+              // If the current item *also* has a page, allow normal navigation if user clicks the title directly.
+              // Only prevent default if user is just expanding/collapsing.
+              const isSubMenuOnly = item.href === "#"
+              if (isSubMenuOnly) {
+                e.preventDefault()
+              }
               toggleSubMenu(item.title)
             }
           }}

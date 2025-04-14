@@ -4,6 +4,34 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { MessageSquare, Mail, Phone, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { sendwhatsapp, sendWhatsAppMessage } from "@/app/api/comms/sendwhatsapp"
+
+const handleSendMessage = async () => {
+  if (!message.trim() || !selectedContact) return
+
+  const newMessage: Message = {
+    id: Date.now().toString(),
+    content: message,
+    timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    sender: "me",
+    status: "sent",
+  }
+
+  setMessages([...messages, newMessage])
+  setMessage("")
+
+  // Send message via WhatsApp API
+  try {
+    await sendWhatsAppMessage({
+      to: selectedContact.id, // This should be a phone number
+      message: message,
+    })
+  } catch (error) {
+    console.error("Failed to send WhatsApp message", error)
+  }
+}
+
+
 
 export default function CommunicationsPage() {
   return (
